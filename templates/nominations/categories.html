@@ -1,0 +1,87 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Nominate - The Viewers Choice Awards{% endblock %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/categories.css' %}">
+{% endblock %}
+
+{% block content %}
+    <main class="nomination-page">
+        <section class="nomination-container">
+            <div class="form-heading">
+                <span class="eyebrow">THE AWARDS</span>
+                <h1>Nominate your favourite creators</h1>
+                <p>Nominate different creators across as many categories as you like. You can leave categories blank.</p>
+            </div>
+
+            <form method="post" class="nomination-form">
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                    <div class="form-errors">
+                        {{ form.non_field_errors }}
+                    </div>
+                {% endif %}
+
+                <div class="category-grid">
+                    {% for item in category_fields %}
+                        <article class="category-card">
+                            <label for="{{ item.field.id_for_label }}">
+                                {{ item.category.name }}
+                            </label>
+
+                            {% if item.category.description %}
+                                <p>{{ item.category.description }}</p>
+                            {% endif %}
+
+                            {{ item.field }}
+
+                            {% for error in item.field.errors %}
+                                <small class="form-error">{{ error }}</small>
+                            {% endfor %}
+                        </article>
+                    {% empty %}
+                        <p>There are no active categories yet.</p>
+                    {% endfor %}
+                </div>
+
+                <div class="form-field">
+                    <label for="{{ form.submitter_email.id_for_label }}">
+                        Your email address
+                    </label>
+
+                    <span class="field-hint">
+                        <icon name="lock" size="xs" /> Used only to prevent duplicate nominations and spam.
+                    </span>
+
+                    {{ form.submitter_email }}
+
+                    {% for error in form.submitter_email.errors %}
+                        <small class="form-error">{{ error }}</small>
+                    {% endfor %}
+                </div>
+
+                <div class="turnstile-container">
+                    <div
+                        class="cf-turnstile"
+                        data-sitekey="{{ turnstile_site_key }}"
+                        data-response-field-name="turnstile_token"
+                    ></div>
+                </div>
+
+                <button type="submit" class="btn btn-large">
+                    Submit nominations <span>→</span>
+                </button>
+            </form>
+        </section>
+
+        <script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            async
+            defer
+        ></script>
+    </main>
+{% endblock %}

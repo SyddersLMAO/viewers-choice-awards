@@ -1,0 +1,184 @@
+
+.nomination-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - 76px - 100px);
+    padding: 4rem 1rem;
+}
+
+.nomination-container {
+    width: min(100%, 760px);
+    margin: 0 auto;
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: 0 16px 48px rgb(0 0 0 / 18%);
+}
+
+.form-heading {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.form-heading h1 {
+    margin: 0.75rem 0;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    font-weight: 700;
+}
+
+.form-heading p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.field-hint {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: -0.35rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+.field-hint icon {
+    flex-shrink: 0;
+}
+
+.nomination-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.category-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    padding: 1.5rem 0;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+}
+
+.category-card:first-child {
+    padding-top: 0;
+}
+
+.category-card label,
+.form-field label {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.category-card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.category-card input,
+.form-field input {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 46px;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--input-background);
+    color: var(--text);
+    font: inherit;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.category-card input:focus,
+.form-field input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgb(244 154 193 / 15%);
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.form-field input::placeholder,
+.category-card input::placeholder {
+    color: var(--muted);
+    opacity: 0.7;
+}
+
+.form-error,
+.form-errors {
+    color: #ff8585;
+    font-size: 0.875rem;
+}
+
+.form-errors ul {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.turnstile-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.primary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    min-height: 48px;
+    padding: 0.85rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    background: var(--accent);
+    color: #171219;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.primary-button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 650px) {
+    .nomination-page {
+        padding: 2rem 1rem;
+    }
+
+    .nomination-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .form-heading h1 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home - Creator Hub{% endblock %}
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/pages/home.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <h1>An awards show shocasing the smaller creators that keep the platforms running</h1>
+        <p>Nominations open now and closing November 27th at 16:00 GMT</p>
+        <a href="{% url 'nominate' %}" class="btn">Nominate a creator</a>
+    </section>
+{% endblock %}
