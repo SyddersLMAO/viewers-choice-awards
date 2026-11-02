@@ -1,3 +1,13 @@
+.container {
+    width: min(100%, 760px);
+    margin: 0 auto;
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: 0 16px 48px rgb(0 0 0 / 18%);
+}
+
 .btn {
     display: inline-flex;
     align-items: center;

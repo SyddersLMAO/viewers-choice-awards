@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" href="{% static 'css/faq.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <div class="container">
+            <h1>FAQ</h1>
+        
+            <div class="questions">
+                <details>
+                    <summary>What is the Viewers Choice Awards?</summary>
+                    <div>
+                        The Viewers Choice Awards is an awards show that is designed to showcase the smaller creators who slip through the cracks but should still recieve the support they deserve.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>How many followers does a nominee need?</summary>
+                    <div>
+                        There is no minimum follower count needed for nominees although there is a maximum. If a createor has over 100k followers, they will not be eligible for nomination.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>How do i get nominated?</summary>
+                    <div>
+                        Nominations are from your community. To get nominated, all you have to do is send the link to the website to your community and ask them to nominate you for the categories that suit you.
+                </details>
+
+                <details>
+                    <summary>How many people can i nominate?</summary>
+                    <div>
+                        There is only one nomination per category, unless stated otherwise.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Where can i watch the awards ceremony?</summary>
+                    <div>
+                        The Viewers Choice Awards will be streamed live on <a href="https://www.twitch.tv/sydderslmao" target="_blank">Twitch</a> and will be uploaded to <a href="https://www.youtube.com/@sydderslmao" target="_blank">YouTube</a> after the event.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+{% endblock %}

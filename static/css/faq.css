@@ -1,0 +1,26 @@
+details{
+  background-color: var(--surface);
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+summary {
+  padding: .5em 1.3rem;
+  list-style: none;
+  transition: height 1s ease;
+}
+
+details div {
+    padding: 1rem 1.3rem;
+    border-top: 1px solid var(--border);
+    background-color: #161616;
+    font-size: 1.2rem;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
